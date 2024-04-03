@@ -1,7 +1,24 @@
+import Header from "../Shared/Header";
+import LeftSideNav from "../Shared/LeftSideNav";
+import Navbar from "../Shared/Navbar";
+import RightsideNav from "../Shared/RightsideNav";
+
 const Home = () => {
     return (
-        <div>
-            <h2>This is home</h2>
+        <div className="">
+            <Header></Header>
+            <Navbar></Navbar>
+            <div className="grid lg:grid-cols-4 gap-6 grid-cols-1 ">
+                <div>
+                    <LeftSideNav></LeftSideNav>
+                </div>
+                <div className="lg:col-span-2">
+                    <h2 className="text-4xl">News comming soon....</h2>
+                </div>
+                <div className="">
+                    <RightsideNav></RightsideNav>
+                </div>
+            </div>
         </div>
     );
 };
