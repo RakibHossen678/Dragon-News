@@ -14,11 +14,25 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink to="/about">About</NavLink>
+      <li >
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-500 , font-semibold" : "font-semibold"
+          } to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink to="/career">Career</NavLink>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-500 , font-semibold" : "font-semibold"
+          } to="/career">Career</NavLink>
+      </li>
+      <li>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-500 , font-semibold" : "font-semibold"
+          } to="/login">Login</NavLink>
+      </li>
+      <li>
+        <NavLink className={({ isActive }) =>
+            isActive ? "text-red-500 , font-semibold" : "font-semibold"
+          } to="/register">Register</NavLink>
       </li>
     </>
   );
