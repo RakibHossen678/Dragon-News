@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Register = () => {
+    const {createUser}=useContext(AuthContext)
+    const [logError,setError]=useState('')
     const handleRegister=(e)=>{
         e.preventDefault()
         const form = new FormData(e.currentTarget)
@@ -11,6 +15,23 @@ const Register = () => {
         const password=form.get('password')
         const checked=e.target.checkbox.checked
         console.log(name,photo,email,password,checked)
+        if(!checked){
+            setError('Please accept the terms and conditions')
+            return
+        }
+        if(password.length<6){
+            setError('Password should be at least 6 characters or more')
+            return
+        }
+        createUser(email,password)
+        .then(result=>{
+            console.log(result.user)
+            e.target.reset()
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+        
       }
     return (
         <div className="mt-7">
@@ -92,6 +113,9 @@ const Register = () => {
             Log in
           </Link>
         </p>
+        {
+            logError && <p>{logError}</p>
+        }
       </div>
     </div>
     );
