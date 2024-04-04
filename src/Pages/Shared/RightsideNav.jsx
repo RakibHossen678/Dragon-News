@@ -13,7 +13,7 @@ const RightsideNav = () => {
   return (
     <div>
       <div className="px-3 mb-6">
-        <h2 className="text-lg font-semibold">Login With</h2>
+        <h2 className="text-xl font-semibold">Login With</h2>
         <div className="mt-5 space-y-3 ">
           <button className="btn bg-transparent hover:bg-transparent w-full text-base border border-[#58A7DE] text-[#58A7DE] ">
             <FaGoogle />
