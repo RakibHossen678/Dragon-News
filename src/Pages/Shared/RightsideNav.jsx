@@ -21,7 +21,7 @@ const RightsideNav = () => {
           </button>
           <button className="btn bg-transparent hover:bg-transparent w-full text-base border border-gray-600 text-gray-700 ">
             <FaGithub />
-            Login with Google
+            Login with GitHub
           </button>
         </div>
       </div>
