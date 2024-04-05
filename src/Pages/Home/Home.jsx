@@ -7,12 +7,20 @@ import BreakingNews from "./BreakingNews";
 import NewsHome from "./NewsHome";
 
 const Home = () => {
+  const [categoryId,setCategoryId]=useState('1')
+  const getCategoryId=(id)=>{
+    setCategoryId(id)
+  }
   const [news, setNews] = useState([]);
   useEffect(() => {
     fetch("news.json")
       .then((res) => res.json())
-      .then((data) => setNews(data));
-  }, []);
+      .then((data) =>{
+        const newsFilter=data.filter((item=>item.category_id===categoryId))
+        console.log(newsFilter)
+        setNews(newsFilter)
+      });
+  }, [categoryId]);
   console.log(news)
   return (
     <div className="">
@@ -21,7 +29,7 @@ const Home = () => {
       <Navbar></Navbar>
       <div className="grid lg:grid-cols-4 gap-9 grid-cols-1 ">
         <div className="">
-          <LeftSideNav></LeftSideNav>
+          <LeftSideNav getCategoryId={getCategoryId}></LeftSideNav>
         </div>
         <div className="lg:col-span-2">
           <h2 className="text-xl font-semibold">Dragon News Home</h2>
@@ -30,7 +38,7 @@ const Home = () => {
           ))}
         </div>
         <div className="text-center lg:text-start">
-          <RightsideNav></RightsideNav>
+          <RightsideNav ></RightsideNav>
         </div>
       </div>
     </div>

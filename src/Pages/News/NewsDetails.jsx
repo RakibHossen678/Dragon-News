@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import Header from "../Shared/Header";
 import RightsideNav from "../Shared/RightsideNav";
 import { useParams, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../provider/AuthProvider";
 
 const NewsDetails = () => {
  
@@ -11,7 +9,7 @@ const NewsDetails = () => {
   console.log(data);
   const findData = data.find((item) => item._id === id);
   console.log(findData);
-  const { author, title, image_url, details, rating, total_view, _id } =
+  const { title, image_url, details } =
     findData;
   return (
     <div>

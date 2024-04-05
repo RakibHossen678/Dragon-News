@@ -1,19 +1,20 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+// import { useState } from "react";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NewsHome = ({ news }) => {
   // const [Slice, setslice] = useState(405);
-  const [hidden, setHidden] = useState(false);
-  const handleReadMore = () => {
-    setHidden(!hidden);
-    setslice(details.length);
-  };
+  // const [hidden, setHidden] = useState(false);
+  // const handleReadMore = () => {
+  //   setHidden(!hidden);
+  //   setslice(details.length);
+  // };
   const { author, title, 
     image_url, details, rating,total_view ,_id} = news;
   // console.log(news);
+ 
   return (
     <div className="mb-10 mt-6 border-2 mx-6 ">
       <div className="flex justify-between items-center  bg-gray-200 px-3 py-2 ">
